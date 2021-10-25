@@ -29,13 +29,13 @@ int main(){
         
         if(rondas%2 == 0){
             printf("Jugador X -> introdusca su jugada de forma horizontal,vertical:\n");
-            scanf("%d,%d", &horizontal, &vertical);
+            scanf("%d,%d", &horizontal,&vertical);
 
-            tablero[horizontal - 1][vertical - 1] = 'X'; 
+            tablero[horizontal - 0][vertical - 0] = 'X'; 
         } else {
             printf("Jugador O -> introdusca su jugada de forma horizontal,vertical:\n");
             scanf("%d,%d", &horizontal,&vertical);
-            tablero[horizontal - 1][vertical - 1] = 'O'; 
+            tablero[horizontal - 0][vertical - 0] = 'O'; 
         }
 
         printf("%c  |  %c  |  %c\n", tablero[0][0], tablero[0][1], tablero[0][2]);
