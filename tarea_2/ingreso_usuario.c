@@ -1,12 +1,11 @@
 #include <stdio.h>
-#include <string.h> /* gets, strcmp */
-#include <stdlib.h> /* system */
+#include <string.h> /* para el funcionamiento de gets, strcmp */
+#include <stdlib.h> /* para el funcionamiento de system */
 
 #define TECLA_ENTER 13
 #define TECLA_BACKSPACE 8
 #define LONGITUD 5
 #define MAX_INTENTOS 3
-
 #define NUMERO_USUARIOS 5
 
 int main() {
@@ -19,8 +18,8 @@ int main() {
     int j = 0;
 
     /* Declaración e inicialización de arreglos de usuarios y claves */
-    char usuarios[NUMERO_USUARIOS][LONGITUD + 1] = {"luis", "jorge", "james", "johan", "kevin"};
-    char claves[NUMERO_USUARIOS][LONGITUD + 1] = {"123", "456", "789", "abc", "efg"};
+    char usuarios[NUMERO_USUARIOS][LONGITUD + 1] = {"Flo", "Mati", "Nico", "Diego", "kevin"};
+    char claves[NUMERO_USUARIOS][LONGITUD + 1] = {"123", "456", "789", "abc", "987"};
 	
 	do {
 		i = 0;
@@ -79,3 +78,12 @@ int main() {
 
 	return 0;
 }
+
+
+
+/* 
+break rompe un bucle
+strcmp devolverá 0 si las cadenas son iguales. En caso de que la primera sea “menor” que la segunda, devolverá un número negativo, y finalmente si la primera es mayor que la segunda, devolverá un número positivo
+system Sirve para ejecutar subprocesos o comandos del sistema operativo. «system» permite ejecutar a su vez otras funciones como: «cls», «dir» o «pause»
+
+*/
