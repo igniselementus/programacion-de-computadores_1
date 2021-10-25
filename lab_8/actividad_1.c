@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include <string.h>
 
 char tablero[3][3];
 int horizontal;
@@ -30,12 +31,15 @@ int main(){
         if(rondas%2 == 0){
             printf("Jugador X -> introdusca su jugada de forma horizontal,vertical:\n");
             scanf("%d,%d", &horizontal,&vertical);
+                tablero[horizontal - 0][vertical - 0] = 'X';
+       
 
-            tablero[horizontal - 0][vertical - 0] = 'X'; 
         } else {
             printf("Jugador O -> introdusca su jugada de forma horizontal,vertical:\n");
             scanf("%d,%d", &horizontal,&vertical);
-            tablero[horizontal - 0][vertical - 0] = 'O'; 
+                tablero[horizontal - 0][vertical - 0] = 'O';
+              
+               
         }
 
         printf("%c  |  %c  |  %c\n", tablero[0][0], tablero[0][1], tablero[0][2]);
@@ -82,8 +86,6 @@ int main(){
             vencedor = 1;
         }
 
-
-        // solucion de sobreescritura
 
         rondas++;
     }while(!vencedor && rondas < 9);
