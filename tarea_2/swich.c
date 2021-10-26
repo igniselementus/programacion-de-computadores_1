@@ -100,7 +100,7 @@ switch(opcion){
                           case 2: system("clear");
                                   printf("ajuste predeterminado\n");
                                   //funcion  ajustes predeterminados 
-                                  persianasautomatico();
+                                  persianas_automatico();
                                   break;
                           default: printf("La opción ingresada no es válida!\n");
                 }
@@ -115,31 +115,29 @@ return 0;
 
 
 void climatizacion_manual(){
-
-
+//hacer configuracion de humedad deseada
+//hacer configuracion de temperatura deseada
 }
 
 void climatizacion_automatico(){
-
-
+//mantener la humedad deseadad
+//mantener la temperatura deseada
 }
 
 void iluminacion_manual(){
-
-
+//hacer configuracion para horario de encendido y apagado de las luces
+//hacer configuracion para encendido de luces segun la luz externa
 }
 
 void iluminacion_automatica(){
-
-
+//encendido de luces segun laluz externa
 }
 
 void persianas_manual(){
-
-
+//configurar horario de cierrer y apertura de persianas
+//configurar cierre y apertura de persianas segun la luz
 }
 
-void persianasautomatico(){
-
-
+void persianas_automatico(){
+//configurar cierre y apertura de persianas segun la luz
 }
