@@ -10,6 +10,8 @@ printf("1.-climatizacion\n");
 printf("2.-iluminacion\n");
 printf("3.-percianas\n");
 
+// añadir informe del estado hogar
+
 printf("elija una opcion");
 scanf("%i", &opcion);  
 
@@ -23,7 +25,7 @@ scanf("%i", &opcion);
 switch(opcion){
   case 1: system ("clear");           
             printf("climatizacion\n");
-            printf("1.-cufigurar parametros\n");
+            printf("1.-configurar parametros\n");
             printf("2.-ajuste predeterminado\n");
             scanf("%i", &opcion);
 
@@ -113,6 +115,7 @@ switch(opcion){
 return 0;
 }
 
+// 2 variables por item
 
 void climatizacion_manual(){
 //hacer configuracion de humedad deseada
