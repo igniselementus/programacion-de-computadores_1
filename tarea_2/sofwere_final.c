@@ -63,13 +63,13 @@ int main() {
 		printf("\n\n\tbienvenido a su hogar automata\n");
 		
        
-    printf("1.-climatizacion\n");
+    printf("\n1.-climatizacion\n");
     printf("2.-iluminacion\n");
     printf("3.-percianas\n");
     printf("4.-estado del hogar\n");
 
 
-printf("elija una opcion:");
+printf("\n\telija una opcion:");
 scanf("%i", &opcion);  
 
 // Validar el dato
@@ -84,6 +84,7 @@ switch(opcion){
             printf("climatizacion\n");
             printf("1.-configurar parametros\n");
             printf("2.-ajuste predeterminado\n");
+            printf("Opción inválida por favor ingrese nuevamente: ");
             scanf("%i", &opcion);
 
               // Validar
