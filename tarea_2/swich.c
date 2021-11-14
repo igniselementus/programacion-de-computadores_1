@@ -9,8 +9,8 @@ printf("bienvenido a su hogar automata\n");
 printf("1.-climatizacion\n");
 printf("2.-iluminacion\n");
 printf("3.-percianas\n");
+printf("4.-estado del hogar\n");
 
-// añadir informe del estado hogar
 
 printf("elija una opcion");
 scanf("%i", &opcion);  
@@ -107,6 +107,8 @@ switch(opcion){
                           default: printf("La opción ingresada no es válida!\n");
                 }
 
+  case 4: system ("estado del hogar"); //terminar esdtado de hogar
+
 
             break;
   default: printf("intentalo de nuevo\n");
@@ -123,8 +125,10 @@ void climatizacion_manual(){
 }
 
 void climatizacion_automatico(){
-//mantener la humedad deseadad
-//mantener la temperatura deseada
+//sensor de humedad
+//liberador de humedad
+//sensor de temperatura
+//aire acondicionado
 }
 
 void iluminacion_manual(){
@@ -133,7 +137,8 @@ void iluminacion_manual(){
 }
 
 void iluminacion_automatica(){
-//encendido de luces segun laluz externa
+//sensor de luz/infrarrojo/fotorresistencia
+//encender luces
 }
 
 void persianas_manual(){
@@ -142,5 +147,6 @@ void persianas_manual(){
 }
 
 void persianas_automatico(){
-//configurar cierre y apertura de persianas segun la luz
+//sensor de luz/infrarrojo/fotorresistencia
+// subir/bajar persianas
 }
