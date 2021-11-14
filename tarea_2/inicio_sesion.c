@@ -29,7 +29,7 @@ int main() {
 		printf("\n\tUSUARIO: ");
 		gets(usuario);
 		printf("\tCLAVE: ");
-    gets(usuario);
+    	gets(clave);
 	
         /* El usuario y clave debe coincidir con alguno de los que se encuentran en el array */
         for (j = 0; j < NUMERO_USUARIOS; ++j) {
