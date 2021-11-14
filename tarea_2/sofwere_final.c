@@ -179,12 +179,16 @@ switch(opcion){
                    switch(opcion){
                           case 1: system("clear");
                                   printf("estado de los sensores\n");
-                                 
+                                  printf("la temperatura del hogar es\n");
+                                  printf("la humedad en el ambiente es\n");
+                                  printf("la luz del ambiente es\n");
 
                                   break;
                           case 2: system("clear");
                                   printf("estado del hogar\n");
-                                  
+                                  printf("luces\n");
+                                  printf("percianas\n");
+                                  printf("aire acondivionado\n");
                                   
                                   break;
                           default: printf("La opción ingresada no es válida!\n");
