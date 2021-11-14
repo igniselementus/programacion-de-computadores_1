@@ -73,7 +73,7 @@ printf("elija una opcion:");
 scanf("%i", &opcion);  
 
 // Validar el dato
-    while((opcion < 1) || (opcion > 3)){
+    while((opcion < 1) || (opcion > 4)){
         system("clear");
         printf("Opción inválida por favor ingrese nuevamente: ");
         scanf("%i", &opcion);
@@ -164,7 +164,31 @@ switch(opcion){
                           default: printf("La opción ingresada no es válida!\n");
                 }
 
-  case 4: system ("estado del hogar"); //terminar esdtado de hogar
+  case 4: system ("clear");            
+            printf("estado del hogar\n");
+            printf("1.-estado de los sensores\n");
+            printf("2.-estado del hogar\n");
+            scanf("%i", &opcion);
+
+              // Validar
+                while((opcion < 1) || (opcion > 2)){
+                        system("clear");
+                        printf("Opción inválida por favor ingrese nuevamente: ");
+                        scanf("%i", &opcion);
+                }
+                   switch(opcion){
+                          case 1: system("clear");
+                                  printf("estado de los sensores\n");
+                                 
+
+                                  break;
+                          case 2: system("clear");
+                                  printf("estado del hogar\n");
+                                  
+                                  
+                                  break;
+                          default: printf("La opción ingresada no es válida!\n");
+                }
 
 
             break;
