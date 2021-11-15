@@ -16,6 +16,8 @@ void iluminacion_manual();
 void iluminacion_automatica();
 void persianas_manual();
 void persianas_automatico();
+void sistema_hogar_sensores();
+void sistema_estado_del_hogar();
 
         //valor sensores
         int humedad_del_hogar = 50;
@@ -45,6 +47,11 @@ void persianas_automatico();
         //persianas manual
         int apertura_persianas_manual = 0;
         int cierre_persianas_manual = 0;
+
+        //parametros sensores
+        int luz_manual_luces = 0;
+        int luz_manual_persianas = 0;
+
 
 int main() {
 	char usuario[LONGITUD + 1];
@@ -122,26 +129,16 @@ switch(opcion){
 
                   switch(opcion){
                           case 1: system("clear");
-                                  printf("configurar parametros\n");
-                                  //configuracion de humedad deseada
-
-                                          printf("\nLa humedad de la casa en este momento es: %i \n", humedad_del_hogar);
-                                          printf("\n ¿Qué porcentaje de humedad desea?\n");
-                                          scanf("%i", &humedad_deseada_manual);
-                                          system("clear");
-                                          //configuracion de temperatura deseada
-                                          printf("\n La temperatura de la casa es %i\n", temperatura_del_hogar);
-                                          printf("\n ¿Qué temperatura desea?\n");
-                                          scanf("%i", &temperatura_deseada_manual);
-                                          system("clear");
-                                          printf("\n Su casa ha sido configurada con %i de humedad y %i grados de temperatura\n", humedad_deseada_manual, temperatura_deseada_manual);
+                                  printf("configuracion manual\n");
+                                  
+                                  climatizacion_manual();
 
                                   break;
                           case 2: system("clear");
-                                  printf("ajuste predeterminado\n");
+                                  printf("configuracion predeterminada\n");
 
-                                         printf("\n Su casa ha sido configurada con %i de humedad y %i grados de temperatura\n", humedad_ideal_automatico, temperatura_ideal_automatico);
-                               
+                                  climatizacion_automatica();
+                                                                      
                                   break;
                           default: printf("La opción ingresada no es válida!\n");
                 }
@@ -165,36 +162,12 @@ switch(opcion){
                           case 1: system("clear");
                                   printf("configuracion manual\n");
                                     
-                                    //hacer configuracion para horario de encendido y apagado de las luces
-                                    printf("\n Configure la hora de inicio de encendido y apagado.\n Tenga en cuenta que las horas están en formato 24 hrs\n");
-                                    printf("\nIntroduzca hora de encendido\n");
-                                    scanf("%i", &hora_encendido_luces_manual);
-                                    printf("\nIntroduzca hora de apagado\n");
-                                    scanf("%i", &hora_apagado_luces_manual);
-                                    system("clear");
-                                    printf("\n Las luces de la casa se encienden desde las %i hrs hasta las %i hrs\n", hora_encendido_luces_manual, hora_apagado_luces_manual);
-                                    //hacer configuracion para encendido de luces segun la luz externa
-                                    printf("\n Configure la hora de inicio de encendido y apagado de las luces externas.\n Tenga en cuenta que las horas están en formato 24 hrs\n");
-                                    printf("\nIntroduzca hora de encendido\n");
-                                    scanf("%i", &hora_encendido_luces_externas_manual);
-                                    printf("\nIntroduzca hora de apagado\n");
-                                    scanf("%i", &hora_apagado_luces_externas_manual);
-                                    system("clear");
-                                    printf("\n Las luces externas se encienden desde las %i hrs hasta las %i hrs\n", hora_encendido_luces_externas_manual, hora_apagado_luces_externas_manual);
+                                  iluminacion_manual();                              
 
                                     break;
                           case 2: system("clear");
-                                  printf("configuracion predeterminada\n");                                   
-                                  //prender y apagar luces sungo fotorresistencia
-                                  if(luz_del_ambiente<30){
-                                    printf("se encenderan las luces\n");                                    
-                                  }
-                                  if(luz_del_ambiente>30){
-                                    printf("se apagaran las luces\n");                                   
-                                  }
-                                  //encender luces y apagar luces
-                                 printf("\n Las luces de la casa se encienden desde las %i hrs hasta las %i hrs\n", hora_encendido_luces_automatico, hora_apagado_luces_automatico);
-                                 printf("\n Las luces externas se encienden desde las %i hrs hasta las %i hrs\n", hora_encendido_luces_exterior_automatico, hora_apagado_luces_exterior_automatico);
+
+                                  iluminacion_automatica();                                  
 
                                     break;
                           default: printf("La opción ingresada no es válida!\n");
@@ -220,36 +193,18 @@ switch(opcion){
                           case 1: system("clear");
                                   printf("configuracion manual\n");
                                   
-                                  //configurar horario de cierrer y apertura de persianas
-                                   printf("\n Configure la hora de inicio de apertura y cierre de las persianas.\n Tenga en cuenta que las horas están en formato 24 hrs\n");
-                                   printf("\nIntroduzca hora de apertura\n");
-                                   scanf("%i", &apertura_persianas_manual);
-                                   printf("\nIntroduzca hora de cierre\n");
-                                   scanf("%i", &cierre_persianas_manual);
-                                   system("clear");
-                                   printf("\n Las persianas se suben a las %i hrs hasta las %i hrs\n", apertura_persianas_manual, cierre_persianas_manual);
-                                  //configurar cierre y apertura de persianas segun la luz
+                                  persianas_manual();
 
                                   break;
                           case 2: system("clear");
                                   printf("configuracion predeterminada\n");
 
-                                  //subir bajar percianas por luz en el ambiente con fotorresistor
-                                  if(luz_del_ambiente<30){
-                                    printf("\n las persianas bajaran\n");
-                                  
-                                  }
-                                  if(luz_del_ambiente>30){
-                                    printf("\n las persianas subiran\n");
-                                    
-                                  }
-                                  // subir/bajar persianas
-                                   printf("\n las persianas bajan desde las 21:00 asta las 8:00\n");
+                                  persianas_automatico();
                                
                                   break;
                           default: printf("La opción ingresada no es válida!\n");
                 }
-
+break;
   case 4: system ("clear");            
             printf("estado del hogar\n");
             printf("1.-estado de los sensores\n");
@@ -266,47 +221,14 @@ switch(opcion){
                    switch(opcion){
                           case 1: system("clear");
                                   printf("estado de los sensores\n");
-                                  printf("la temperatura del hogar es de %i  grados celcius\n", temperatura_del_hogar);
-                                  printf("la humedad en el ambiente es del %i porciento\n", humedad_del_hogar);
-                                  printf("la luz del ambiente es del %i porciento\n", luz_del_ambiente);
+                                  
+                                  sistema_hogar_sensores();
 
                                   break;
                           case 2: system("clear");
                                   printf("estado del hogar\n");
                                   
-                                  if(luz_del_ambiente<30){
-                                    printf("luces encendidas\n");                                    
-                                  }
-                                  if(luz_del_ambiente>30){
-                                    printf("luces apagadas\n");                                   
-                                  }
-
-                                  if(luz_del_ambiente<30){
-                                    printf("persianas abajo\n");                                   
-                                  }
-                                  if(luz_del_ambiente>30){
-                                    printf("persianas arriba\n");                                    
-                                  }
-
-                                  if(temperatura_del_hogar>22){
-                                    printf("aire acondicionado encendido temperatura\n");                                   
-                                  }
-                                  if(temperatura_del_hogar<18){
-                                    printf("aire acondicionado encendido temperatura\n");                                   
-                                  }
-                                  if((temperatura_del_hogar>=18) && (temperatura_del_hogar<=22)){
-                                    printf("aire acondicionado apagado temperatura\n");                                   
-                                  }
-
-                                  if(humedad_del_hogar<50){
-                                    printf("aire acondicionado encendido humedad\n");                                    
-                                  }
-                                  if(humedad_del_hogar>60){
-                                    printf("aire acondicionado encendido humedad\n");                                    
-                                  }
-                                  if((humedad_del_hogar>=50) && (humedad_del_hogar<=60)){
-                                    printf("aire acondicionado apagado humedad\n");                                   
-                                  }
+                                  sistema_estado_del_hogar();
                                   
                                   break;
                           default: printf("La opción ingresada no es válida!\n");
@@ -323,6 +245,182 @@ switch(opcion){
 	}
 
 	return 0;
+}
+
+
+void climatizacion_manual(){
+//configuracion de humedad deseada
+
+printf("\nLa humedad de la casa en este momento es: %i \n", humedad_del_hogar);
+printf("\n ¿Qué porcentaje de humedad desea?\n");
+scanf("%i", &humedad_deseada_manual);
+system("clear");
+//configuracion de temperatura deseada
+printf("\n La temperatura de la casa es %i\n", temperatura_del_hogar);
+printf("\n ¿Qué temperatura desea?\n");
+scanf("%i", &temperatura_deseada_manual);
+system("clear");
+printf("\n Su casa ha sido configurada con %i de humedad y %i grados de temperatura\n", humedad_deseada_manual, temperatura_deseada_manual);
+
+}
+
+void climatizacion_automatica(){
+//aire acondicionado por sensores 
+
+printf("\n Su casa ha sido configurada con %i de humedad y %i grados de temperatura\n", humedad_ideal_automatico, temperatura_ideal_automatico);                               
+  if(temperatura_del_hogar>22){
+    printf("aire acondicionado encendido temperatura\n");                                   
+}
+  if(temperatura_del_hogar<18){
+    printf("aire acondicionado encendido temperatura\n");                                   
+}
+  if((temperatura_del_hogar>=18) && (temperatura_del_hogar<=22)){
+    printf("aire acondicionado apagado temperatura\n");                                   
+}
+
+  if(humedad_del_hogar<50){
+    printf("aire acondicionado encendido humedad\n");                                    
+}
+  if(humedad_del_hogar>60){
+    printf("aire acondicionado encendido humedad\n");                                    
+}
+  if((humedad_del_hogar>=50) && (humedad_del_hogar<=60)){
+     printf("aire acondicionado apagado humedad\n");                                   
+}
+
+}
+
+void iluminacion_manual(){
+//hacer configuracion para horario de encendido y apagado de las luces
+printf("\n Configure la hora de inicio de encendido y apagado.\n Tenga en cuenta que las horas están en formato 24 hrs\n");
+printf("\nIntroduzca hora de encendido\n");
+scanf("%i", &hora_encendido_luces_manual);
+printf("\nIntroduzca hora de apagado\n");
+scanf("%i", &hora_apagado_luces_manual);
+system("clear");
+printf("\n Las luces de la casa se encienden desde las %i hrs hasta las %i hrs\n", hora_encendido_luces_manual, hora_apagado_luces_manual);
+system("clear");
+//hacer configuracion para encendido de luces segun la luz externa
+printf("\n Configure la hora de inicio de encendido y apagado de las luces externas.\n Tenga en cuenta que las horas están en formato 24 hrs\n");
+printf("\nIntroduzca hora de encendido externa\n");
+scanf("%i", &hora_encendido_luces_externas_manual);
+printf("\nIntroduzca hora de apagado externa\n");
+scanf("%i", &hora_apagado_luces_externas_manual);
+system("clear");
+printf("\n Las luces externas se encienden desde las %i hrs hasta las %i hrs\n", hora_encendido_luces_externas_manual, hora_apagado_luces_externas_manual);
+system("clear");
+
+printf("\nintrodusca intencidad de luz minima para encender las luces\n");
+scanf("%i", &luz_manual_luces);
+system("clear");
+printf("\nlas luces se encenderan cuando la intensidad de luz sea menor a %i\n", luz_manual_luces);
+  if(luz_del_ambiente<luz_manual_luces){
+    printf("se encenderan las luces\n");                                    
+}
+  if(luz_del_ambiente>luz_manual_luces){
+      printf("se apagaran las luces\n");                                   
+} 
+
+}
+
+void iluminacion_automatica(){
+printf("configuracion predeterminada\n");                                   
+ //prender y apagar luces segun fotorresistencia
+printf("\nlas luces se encenderan al tener una intensidad de luz inferior a 30\n");
+  if(luz_del_ambiente<30){
+    printf("se encenderan las luces\n");                                    
+}
+  if(luz_del_ambiente>30){
+    printf("se apagaran las luces\n");                                   
+}
+                                  
+//encender luces y apagar luces
+printf("\n Las luces de la casa se encienden desde las %i hrs hasta las %i hrs\n", hora_encendido_luces_automatico, hora_apagado_luces_automatico);
+printf("\n Las luces externas se encienden desde las %i hrs hasta las %i hrs\n", hora_encendido_luces_exterior_automatico, hora_apagado_luces_exterior_automatico);
+
+}
+
+void persianas_manual(){
+//configurar horario de cierrer y apertura de persianas
+printf("\n Configure la hora de inicio de apertura y cierre de las persianas.\n Tenga en cuenta que las horas están en formato 24 hrs\n");
+printf("\nIntroduzca hora de apertura\n");
+scanf("%i", &apertura_persianas_manual);
+printf("\nIntroduzca hora de cierre\n");
+scanf("%i", &cierre_persianas_manual);
+system("clear");
+printf("\n Las persianas se suben a las %i hrs hasta las %i hrs\n", apertura_persianas_manual, cierre_persianas_manual);
+//configurar cierre y apertura de persianas segun la luz
+printf("\nintrodusca intencidad de luz minima para bajar las persianas\n");
+scanf("%i", &luz_manual_persianas);
+system("clear");
+printf("\nlas persianas bajaran cuando la intensidad de la luz sea menor a %i\n", luz_manual_persianas);
+  if(luz_del_ambiente<luz_manual_persianas){
+    printf("se subiran las persianas\n");                                    
+}
+  if(luz_del_ambiente>luz_manual_persianas){
+      printf("se bajaran las persianas\n");                                   
+} 
+
+}
+
+void persianas_automatico(){
+//subir bajar percianas por luz en el ambiente con fotorresistor
+  if(luz_del_ambiente<30){
+    printf("\n las persianas bajaran\n");
+                                  
+}
+  if(luz_del_ambiente>30){
+    printf("\n las persianas subiran\n");
+                                    
+}
+// subir/bajar persianas
+printf("\n las persianas bajan desde las 21:00 asta las 8:00\n");
+
+}
+
+void sistema_hogar_sensores(){
+printf("la temperatura del hogar es de %i  grados celcius\n", temperatura_del_hogar);
+printf("la humedad en el ambiente es del %i porciento\n", humedad_del_hogar);
+printf("la luz del ambiente es del %i porciento\n", luz_del_ambiente);
+
+}
+
+void sistema_estado_del_hogar(){
+
+if(luz_del_ambiente<30){
+printf("luces encendidas\n");                                    
+}
+if(luz_del_ambiente>30){
+printf("luces apagadas\n");                                   
+}
+
+if(luz_del_ambiente<30){
+printf("persianas abajo\n");                                   
+}
+if(luz_del_ambiente>30){
+printf("persianas arriba\n");                                    
+}
+
+if(temperatura_del_hogar>22){
+printf("aire acondicionado encendido temperatura\n");                                   
+}
+if(temperatura_del_hogar<18){
+printf("aire acondicionado encendido temperatura\n");                                   
+}
+if((temperatura_del_hogar>=18) && (temperatura_del_hogar<=22)){
+printf("aire acondicionado apagado temperatura\n");                                   
+}
+
+if(humedad_del_hogar<50){
+printf("aire acondicionado encendido humedad\n");                                    
+}
+if(humedad_del_hogar>60){
+printf("aire acondicionado encendido humedad\n");                                    
+}
+if((humedad_del_hogar>=50) && (humedad_del_hogar<=60)){
+printf("aire acondicionado apagado humedad\n");                                   
+}
+  
 }
 
 
