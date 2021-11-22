@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
+#include "libreria_gato.h"
+
+char tablero[3][3];
+int horizontal;
+int vertical;
+int vencedor = 0;
+int rondas = 0;
+
+void ingresar_jugada();
+void tablero_1();
+void tablero_2();
+void condicion_victoria();
+
+/* 0=falso, 1=verdadero*/
+
+
+int main(){
+
+    tablero_1();
+
+    while(!vencedor && rondas < 9){
+
+        ingresar_jugada();
+        tablero_2();
+
+        condicion_victoria();
+}
+    return 0; 
+}
