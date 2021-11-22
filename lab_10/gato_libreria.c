@@ -10,11 +10,6 @@ int vertical;
 int vencedor = 0;
 int rondas = 0;
 
-void ingresar_jugada();
-void tablero_1();
-void tablero_2();
-void condicion_victoria();
-
 /* 0=falso, 1=verdadero*/
 
 
