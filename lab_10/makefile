@@ -1,8 +1,8 @@
 
 
 all:
-	gcc -c libreria_gato.c
-	gcc -c gato_libreria.c
-	gcc -c ejecutable libreria_gato.o gato_libreria.o
+	gcc -c libreriagato.c
+	gcc -c gatolibreria.c
+	gcc -o ejecutable libreriagato.o gatolibreria.o
 	rm *.o
 	./ejecutable

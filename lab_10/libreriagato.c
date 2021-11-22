@@ -2,7 +2,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
-#include "libreria_gato.h"
+#include "libreriagato.h"
 
 char tablero[3][3];
 int horizontal;
