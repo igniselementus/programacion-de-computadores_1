@@ -4,13 +4,14 @@
 #include <string.h>
 #include "libreriagato.h"
 
-int vencedor = 0;
-int rondas = 0;
 
 /* 0=falso, 1=verdadero*/
 
 
 int main(){
+    int vencedor = 0;
+    int rondas = 0;
+
 
     tablero_1();
 
