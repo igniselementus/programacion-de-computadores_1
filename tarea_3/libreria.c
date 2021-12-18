@@ -42,8 +42,8 @@
 * Nombre de la función: climatizacion_manual 
 * Tipo de función: void
 * Parámetros: 
-* Dato de retorno:
-* Descripción de la función: 
+* Dato de retorno: no retorna ningun dato ya que es una funcion void
+* Descripción de la función: esta funcion permite al usuario configurar el aire acondicionado a los parametros que el desea
 *
 */
 
@@ -68,8 +68,8 @@ printf("\n Su casa ha sido configurada con %i de humedad y %i grados de temperat
 * Nombre de la función: climatizacion_automatica
 * Tipo de función: void
 * Parámetros: 
-* Dato de retorno:
-* Descripción de la función: 
+* Dato de retorno: no retorna ningun dato ya que es una funcion void
+* Descripción de la función: maneja la temperatura y humedad del hogar con configuracion predeterminada
 *
 */
 
@@ -84,17 +84,17 @@ printf("\n Su casa ha sido configurada con %i de humedad y %i grados de temperat
     printf("aire acondicionado encendido temperatura\n");                                   
 }
   if((temperatura_del_hogar>=18) && (temperatura_del_hogar<=22)){
-    printf("aire acondicionado apagado temperatura\n");                                   
+    printf("aire acondicionado apagado temperatura\n");
 }
 
   if(humedad_del_hogar<50){
-    printf("aire acondicionado encendido humedad\n");                                    
+    printf("aire acondicionado encendido humedad\n");
 }
   if(humedad_del_hogar>60){
-    printf("aire acondicionado encendido humedad\n");                                    
+    printf("aire acondicionado encendido humedad\n");
 }
   if((humedad_del_hogar>=50) && (humedad_del_hogar<=60)){
-     printf("aire acondicionado apagado humedad\n");                                   
+     printf("aire acondicionado apagado humedad\n");
 }
 }
 
@@ -103,8 +103,8 @@ printf("\n Su casa ha sido configurada con %i de humedad y %i grados de temperat
 * Nombre de la función: iluminacion_manual
 * Tipo de función: void
 * Parámetros: 
-* Dato de retorno:
-* Descripción de la función: 
+* Dato de retorno: no retorna ningun dato ya que es una funcion void
+* Descripción de la función: esta funcion permite al usuario configurar el horario de las luces del hogar
 *
 */
 
@@ -146,8 +146,8 @@ printf("\nlas luces se encenderan cuando la intensidad de luz sea menor a %i\n",
 * Nombre de la función: iluminacion_automatica
 * Tipo de función: void
 * Parámetros: 
-* Dato de retorno:
-* Descripción de la función: 
+* Dato de retorno: no retorna ningun dato ya que es una funcion void
+* Descripción de la función: esta funcion maneja las luces del hogar con horarios y intencidad de luz con ajustes integrados
 *
 */
 
@@ -173,8 +173,8 @@ printf("\n Las luces externas se encienden desde las %i hrs hasta las %i hrs\n",
 * Nombre de la función: persianas_manual
 * Tipo de función: void
 * Parámetros: 
-* Dato de retorno:
-* Descripción de la función: 
+* Dato de retorno: no retorna ningun dato ya que es una funcion void
+* Descripción de la función: esta funcion permite al usuario configurar la apertura y el cierre de las percianas del hogar segun la luz y la hora del dia
 *
 */
 
@@ -206,8 +206,8 @@ printf("\nlas persianas bajaran cuando la intensidad de la luz sea menor a %i\n"
 * Nombre de la función: persianas_automatico
 * Tipo de función: void
 * Parámetros: 
-* Dato de retorno:
-* Descripción de la función: 
+* Dato de retorno: no retorna ningun dato ya que es una funcion void
+* Descripción de la función: esta funcion maneja laspersianas del hogar con un ajuste integrado
 *
 */
 
@@ -231,8 +231,8 @@ printf("\n las persianas bajan desde las 21:00 asta las 8:00\n");
 * Nombre de la función: sistema_hogar_sensores
 * Tipo de función: void
 * Parámetros: 
-* Dato de retorno:
-* Descripción de la función: 
+* Dato de retorno: no retorna ningun dato ya que es una funcion void
+* Descripción de la función: permite al usuario ver los datos de los sensores incorporados en el hogar
 *
 */
 
@@ -248,8 +248,8 @@ printf("la luz del ambiente es del %i porciento\n", luz_del_ambiente);
 * Nombre de la función: sistema_estado_del_hogar
 * Tipo de función: void
 * Parámetros: 
-* Dato de retorno:
-* Descripción de la función: 
+* Dato de retorno: no retorna ningun dato ya que es una funcion void
+* Descripción de la función: esta funcion permite al usuario ver el estado completo del hogar 
 *
 */
 

@@ -7,15 +7,12 @@
 * Tarea 3
 *
 * Autores: Diego Ignacio Herrera Arriagada  mail: d.herrera07@ufromail.cl
-*          Nicolas Rodolfo Vasquez Peña     mail: 
+*          Nicolas Rodolfo Vasquez Peña     mail: n.vasquez06@ufromail.cl
 *
 * Fecha: 01/12/2021
 *
-* Descripción general del programa: 
-*
-*
-*
-*
+* Descripción general del programa:  El programa esta echo para configurar una casa domotica atravez de una aplicacion la cual te 
+* permite tener varios usuarios
 *
 */
 
