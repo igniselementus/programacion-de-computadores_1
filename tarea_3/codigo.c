@@ -9,9 +9,14 @@
 * Autores: Diego Ignacio Herrera Arriagada  mail: d.herrera07@ufromail.cl
 *          Nicolas Rodolfo Vasquez Peña     mail: 
 *
-* Fecha:
+* Fecha: 01/12/2021
 *
-* Descripción general del programa
+* Descripción general del programa: 
+*
+*
+*
+*
+*
 */
 
 #include <stdio.h>
